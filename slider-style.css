@@ -1,0 +1,95 @@
+@import url(http://fonts.googleapis.com/css?family=Audiowide);
+html {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.4;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+h1 {
+  color: #fff;
+  font-family: "Audiowide", cursive;
+  font-size: 2em;
+  font-size: 6vw;
+  line-height: 1.2;
+  margin: 0.5em 0 3em;
+  text-shadow: 1px 1px 1px #333;
+}
+
+@media (min-width: 67.1875em) {
+  h1 {
+    font-size: 4em;
+  }
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.wrap {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  
+  background: #120103;
+  color: #fff;
+  text-align: center;
+}
+
+
+
+header label:hover {
+  background: #2e353b;
+}
+
+.slide {
+  height: 50%;
+  width: 50%;
+  position: absolute;
+  top: 15%;
+  left: 100%;
+ 
+  padding: 8em 1em 0;
+  background-color: #120103;
+  background-position: 25% 50%;
+  background-size: cover;
+  -webkit-transition: left 0s .75s;
+  transition: left 0s .75s;
+}
+.slide-one { background-image: url('ACT/5.jpg'); }
+.slide-two { background-image: url('ACT/2.jpg'); }
+.slide-three { background-image: url('ACT/3.jpg'); }
+.slide-four { background-image: url('ACT/4.jpg'); }
+
+
+[id^="slide"]:checked + .slide {
+  left: 15%;
+  z-index: 100;
+  -webkit-transition: left .65s ease-out;
+  transition: left .65s ease-out;
+}
+[id^="slide"]:checked + .slide h1 {
+ 
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+  -webkit-transition: all .5s .5s;
+  transition: all .5s .5s;
+}
+
+.wrapper {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+}

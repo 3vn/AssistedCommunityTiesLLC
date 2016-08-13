@@ -1,0 +1,131 @@
+html,
+body {
+	display: flex;
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	align-items: flex-start;
+	justify-content: center;
+	background-color: #120103;
+}
+.wrap-wrap {
+	display: flex;
+	align-items: flex-start;
+	justify-content: center;
+}
+
+.wrap {
+	/* size of slides and images */
+	display: flex;
+	height:  35em;
+	width: 35em;
+	/* position slides off screen without scrollbars */
+	position: relative;
+	overflow: hidden;
+
+	/* color */
+	background: #120103;
+	color: #fff;
+
+	text-align: center;
+	-webkit-border-image: url('border.png') 30 stretch;
+	align-items: flex-end;
+	justify-content: center;
+}
+
+.slide-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	
+
+}
+
+#slide-1-trigger {
+	z-index: 5000;
+}
+#slide-2-trigger {
+	z-index: 5000;
+}
+#slide-3-trigger {
+	z-index: 5000;
+}
+#slide-4-trigger {
+	z-index: 5000;
+}
+
+header {
+	background: #3E474F;
+	box-shadow: 0 .5em 1em #111;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 900;
+	width: 100%;
+	
+}
+
+header label {
+	color: #788188;
+	cursor: pointer;
+	display: inline-block;
+	/* larger clickable area */
+	line-height: 4.25em;
+	font-size: .6667em;
+	font-weight: bold;
+	padding: 0 1em;
+}
+
+header label:hover {
+	background: #2e353b;
+}
+
+
+
+.slide {
+	/* pushing slides out of view */
+
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: -640px;
+	width: 640px;
+	height: 640px;
+	z-index: 10;
+	padding: 8em 1em 0;
+	background-color: #120103;
+	background-position: 50% 50%;
+	background-size: cover;
+	transition: left 0s .75s;
+}
+
+
+.slide-one { background-image: url( 'ACT/5.jpg'); }
+
+.slide-two { background-image: url( 'ACT/2.jpg'); }
+
+.slide-three { background-image: url( 'ACT/3.jpg'); }
+
+.slide-four { background-image: url( 'ACT/4.jpg'); }
+
+/* attribute selector*/
+
+[id^="slide"]:checked + .slide {
+	left: 0;
+	z-index: 100;
+	transition: left .65s ease-out;
+}
+
+@-webkit-keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
